@@ -39,3 +39,5 @@ buildNumber.properties
 !.vscode/extensions.json
 *.code-workspace
 /Ricksy_bussiness/target
+/.idea
+.vscode

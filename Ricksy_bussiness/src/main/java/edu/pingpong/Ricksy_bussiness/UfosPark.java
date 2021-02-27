@@ -14,4 +14,11 @@ public class UfosPark implements GuestDispatcher {
         flota.putIfAbsent(ovni, null);
     }
 
+    @Override
+    public void dispatch(CreditCard creditCard){
+        flota.entrySet().stream()
+        .filter(o -> o.getValue() == null).forAny(o -> o.replace(o.getKey(), creditCard));
+    }
+
+
 }

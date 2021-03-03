@@ -1,30 +1,42 @@
 package edu.pingpong.Ricksy_bussiness;
 
-import static org.junit.Assert.assertEquals;
-
+import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collection;
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
+import static org.junit.Assert.*;
+
 public class UfosParkTest{
-    UfosPark ufosPark = new UfosPark();
     CreditCard creditCardAbra = new CreditCard("Abrahadolf", "555");
+    UfosPark ufosPark;
 
 
     @Before
     public void setUpUfosPark(){
+        UfosPark ufosPark = new UfosPark();
+        assertNotNull(ufosPark);
         ufosPark.add("Hola");
         ufosPark.add("Bon");
         ufosPark.add("Dia");
         ufosPark.add("Uwu");
-
     }
-    
+
     @Test
-    public void nulosTest(){
-        assertEquals(4, ufosPark.frequency(party.values(), null));
-        ufosPark.dispatch(creditCardAbra);
-        
+    public void nullTest(){
+        Collection <String> cards;
+        cards = ufosPark.cardNumbers();
+        assertEquals(0,cards.size());}
     }
+
+
+
+
+
+
 
     
 
-}

@@ -3,8 +3,8 @@ package edu.pingpong.Ricksy_bussiness;
 public class CreditCard {
     private final String owner;
     private final String number;
-    private double credit = 3000d;
     private final String SYMBOL = "EZI";
+    private double credit = 3000d;
 
     public CreditCard(String owner, String number) {
         this.owner = owner;

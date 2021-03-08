@@ -12,12 +12,11 @@ import static org.junit.Assert.*;
 
 public class UfosParkTest{
     CreditCard creditCardAbra = new CreditCard("Abrahadolf", "555");
-    UfosPark ufosPark;
+    UfosPark ufosPark = new UfosPark();
 
 
     @Before
     public void setUpUfosPark(){
-        UfosPark ufosPark = new UfosPark();
         assertNotNull(ufosPark);
         ufosPark.add("Hola");
         ufosPark.add("Bon");
@@ -27,10 +26,22 @@ public class UfosParkTest{
 
     @Test
     public void nullTest(){
+        for (String number: ufosPark.cardNumbers()){
+        assertEquals(null, number);}
+    };
+
+    @Test
+    public void notNullTest(){
         Collection <String> cards;
+        ufosPark.dispatch(creditCardAbra);
         cards = ufosPark.cardNumbers();
-        assertEquals(0,cards.size());}
+        assertNotNull(ufosPark.getUfoOf("555"));
+        assertEquals(1, cards.stream().filter(c -> c!= null).count() );
     }
+
+}
+
+
 
 
 

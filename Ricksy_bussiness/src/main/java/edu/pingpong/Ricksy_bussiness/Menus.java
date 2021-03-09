@@ -4,10 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Menus implements GuestDispatcher {
-    private int stock = 100;
-    private double menuCost = 10d;
-
     private final List<String> orders = new ArrayList<String>();
+    private int stock = 100;
+    private final double menuCost = 10d;
 
     Menus() {
     }
@@ -20,6 +19,7 @@ public class Menus implements GuestDispatcher {
         return this.menuCost;
     }
 
+    @Override
     public void dispatch(CreditCard card) {
         if (this.stock > 0 && card.pay(menuCost)) {
             this.stock--;

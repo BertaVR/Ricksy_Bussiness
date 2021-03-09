@@ -7,6 +7,8 @@ public class Receptivo {
     Receptivo() {
     }
 
+
+
     private Set<GuestDispatcher> dispatchers = new LinkedHashSet<>();
 
     void registra(GuestDispatcher dispatcher) {
@@ -18,4 +20,10 @@ public class Receptivo {
             dispatcher.dispatch(card);
         }
     }
+
+    public Set<GuestDispatcher> getDispatchers() {
+        return dispatchers;
+    }
+
+
 }

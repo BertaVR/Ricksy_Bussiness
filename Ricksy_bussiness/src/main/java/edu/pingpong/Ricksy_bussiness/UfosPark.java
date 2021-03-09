@@ -10,7 +10,6 @@ public class UfosPark implements GuestDispatcher {
     UfosPark() {
     }
 
-
     void add(String ovni) {
         flota.putIfAbsent(ovni, null);
     }
@@ -41,7 +40,7 @@ public class UfosPark implements GuestDispatcher {
     } //same
 
     @Override
-    public String toString(){
+    public String toString() {
         String[] ufosID = this.flota.keySet().toArray(new String[flota.size()]);
         Arrays.sort(ufosID);
         return List.of(ufosID).toString();
@@ -51,7 +50,7 @@ public class UfosPark implements GuestDispatcher {
         return this.flota.containsValue(cardNumber);
     }
 
-    Collection <String> cardNumbers(){
+    Collection<String> cardNumbers() {
         return this.flota.values();
     }
 

@@ -4,7 +4,7 @@ public class CrystalExpender implements GuestDispatcher {
     private int stock = 0;
     private double itemCost = 0d;
 
-    CrystalExpender(int stock, double itemCost) {
+    public CrystalExpender(int stock, double itemCost) {
         this.stock = stock;
         this.itemCost = itemCost;
     }
@@ -17,6 +17,7 @@ public class CrystalExpender implements GuestDispatcher {
         return this.itemCost;
     }
 
+    @Override
     public void dispatch(CreditCard card) {
         if (this.stock > 0 && card.pay(itemCost)) {
             this.stock--;
